@@ -16,7 +16,7 @@ chmod +x fire
 The output gif looks something like this:
 ![wow.gif](wow.gif)
 
-Please be patient as it takes around 8.5 minutes to create 80 frames of gif...
+Please be patient as it takes around 8.5 minutes to create 80 frames of gif...<br>
 nearly 1.536E9 calculations are done to achieve this animation.
 
 Enjoy ;)

@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-# Mandenbrot animation creator using Pillow gif by @rvcgeeks____ @Pune < github.com/rvcgeeks >
+# Mandenbrot animation creator using Pillow by @rvcgeeks____ @Pune < github.com/rvcgeeks >
 from PIL import Image as Im, ImageDraw as Id
 W = 600 ; H = 400 ; M = 80 ; L = -2.0 ; R = 1.0 ; D = -1.0 ; U = 1.0 ; FL = []
 for i in range(0, 81):
-    print(i) ; n = i / 16.00
-    F = Im.new('HSV', (W, H), (0, 0, 0)) ; d = Id.Draw(F)
-    for x in range(0, W):
-        for y in range(0, H):
-            z = 0 ; m = 0 ; c = complex(L + (x / float(W) ) * (R - L), D + (y / float(H)) * (U - D))
-            while abs(z) <= 2 and m < M:
-                z = z**n + c ; m += 1
-            d.point([x, y], (int(256 * ( 1 - m / M )) - 85, 255, 255 if m < M else 0)) 
-    FL.append(F.convert('RGB')) 
+	print(i) ; n = i / 16.00
+	F = Im.new('HSV', (W, H), (0, 0, 0)) ; d = Id.Draw(F)
+	for x in range(0, W):
+		for y in range(0, H):
+			z = 0 ; m = 0 ; c = complex(L + (x / float(W)) * (R - L), D + (y / float(H)) * (U - D))
+			while abs(z) <= 2 and m < M:
+				z = z**n + c ; m += 1
+			d.point([x, y], (int(256 * ( 1 - m / M )) - 85, 255, 255 if m < M else 0))
+	FL.append(F.convert('RGB'))
 FL[0].save('wow.gif', format = 'GIF', append_images = FL[1:], save_all = True, duration = 100, loop = 0)
